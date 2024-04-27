@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import './../styles/App.css';
+import React, { useState } from 'react';
 
-const App = (props) => {
-  const [visible,setVisible] = useState(false)
+const ButtonCounter = () => {
+  // Initialize the counter state to 0
+  const [count, setCount] = useState(0);
+
+  // Event handler to increment the counter when the button is clicked
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
   return (
-    <div className="App" id="main">
-      
-      <p id="para" className={visible?"show":"hide"}>Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"</p>
-      <button id="click" onClick={()=>{setVisible(!visible)}}>{visible?"Hide":"Show"}</button>
+    <div>
+      {/* Display the count of button clicks */}
+      <p>Button clicked {count} times</p>
+      {/* Button to increment the counter */}
+      <button onClick={handleClick}>Click me</button>
     </div>
   );
-}
+};
 
-export default App
+export default ButtonCounter;
